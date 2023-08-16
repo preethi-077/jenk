@@ -1,10 +1,9 @@
-pipeline   //the task which we are achieving
-{
+pipeline {
         agent any
             tools {
                     maven 'Maven'
-          }
-        stages {
+            }
+            stages {
                 stage('git clone') {
                         steps {
                            git 'https://github.com/preethi-077/jenk.git'
@@ -20,5 +19,5 @@ pipeline   //the task which we are achieving
                             sh 'mvn test'
                         }
                 }
-        }
+            }
 }
