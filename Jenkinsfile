@@ -1,12 +1,13 @@
-pipeline {
-    agent any
-    tools {
-         maven 'Maven'
-    }
-            stages {
+pipeline   //the task which we are achieving
+{
+        agent any
+            tools {
+                    maven 'maven'
+          }
+        stages {
                 stage('git clone') {
                         steps {
-                           git 'https://github.com/preethi-077/jenk.git'
+                           git 'https://github.com/ajit40/maven-integration-sak.git'
                         }
                 }
                 stage('compile') {
@@ -19,5 +20,5 @@ pipeline {
                             sh 'mvn test'
                         }
                 }
-            }
+        }
 }
